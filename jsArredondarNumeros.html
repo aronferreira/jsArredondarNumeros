@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(25, 25, 25);
+        }
+
+        #conteudo{
+            color: rgb(235, 235, 235);
+            width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        function arredondar(){
+        var x = prompt("Insira aqui um número");
+        x = Number(x);
+        var y = x - Math.floor(x);
+
+        if (y < 0.5){
+            document.getElementById("conteudo").innerHTML = "<p>O seu número arredondado é: " + Math.floor(x) + "</p>" + "<button onclick='arredondar()'>Arredondar outro número</br>";
+            /* document.write("O seu número arredondado é: " + Math.floor(x)); */
+            
+        } else if (y > 0.5){
+            document.getElementById("conteudo").innerHTML = "<p>O seu número arredondado é: " + Math.ceil(x) + "</p>" + "<button onclick='arredondar()'>Arredondar outro número</br>";
+
+        } else {
+            document.getElementById("conteudo").innerHTML = "<p>O seu número é: "+ x + "</p>"  + "<button onclick='arredondar()'>Arredondar outro número</br>";
+        }
+    }
+
+
+        </script>
+
+</head>
+<body>
+    <div id="conteudo">
+        <p>Olá, neste programa você pode arredondar um número para o seu número mais próximo, mas lembre-se: Números com exatamente .5 após a vírgula manterão esse valor.</p>
+        <button onclick="arredondar()">Clique aqui para arredondar um número</button>
+    </div>
+    
+</body>
+</html>
